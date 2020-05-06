@@ -1,4 +1,4 @@
 cd project
-hugo
+hugo -t academic
 cd ..
-cp project/public/* .
+cp -R project/public/* .
