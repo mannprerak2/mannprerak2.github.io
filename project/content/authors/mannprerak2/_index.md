@@ -20,9 +20,9 @@ organizations:
 # Short bio (displayed in user profile at end of posts)
 bio: I am a pre-final year student at Delhi Technological University, and I love to make side projects in my spare time.
 
-interests:
-- Flutter
-- Dart
+# interests:
+# - Flutter
+# - Dart
 
 education:
   courses:
