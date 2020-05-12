@@ -18,7 +18,7 @@ organizations:
   url: "http://dtu.ac.in/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am a pre-final year student at Delhi Technological University, and I love to make side projects in my spare time.
+bio: I am a pre-final year B.Tech undergrad at Delhi Technological University with a keen interest in Software Engineering and Development. I love to make side projects in my spare time.
 
 # interests:
 # - Flutter

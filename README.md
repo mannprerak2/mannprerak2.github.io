@@ -32,3 +32,6 @@ git push
 
 ### Turn on/off widgets
 Set `active=false/true` in widgets (in project/content/home folder)
+
+### Adding Posts to blog
+Just add a folder with `index.md` and `featured.png` to [./project/content/post](./project/content/post)

@@ -14,9 +14,14 @@
   weight = 30
 
 [[main]]
+  name = "Blog"
+  url = "#posts"
+  weight = 31
+
+[[main]]
   name = "Projects"
   url = "#projects"
-  weight = 30
+  weight = 32
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -24,8 +29,3 @@
     name = "Resume"
     url = "files/Resume.pdf"
     weight = 70
-    
-[[main]]
-    name = "Flutter-Portfolio"
-    url = "https://mannprerak2.github.io/flutter_project_portfolio/"
-    weight = 80

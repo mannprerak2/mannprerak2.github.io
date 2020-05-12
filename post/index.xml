@@ -5,12 +5,34 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Prerak Mann 2020</copyright>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Prerak Mann 2020</copyright><lastBuildDate>Tue, 12 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Google Summer of Code 2020 with Dart</title>
+      <link>/post/gsoc-2020/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      <guid>/post/gsoc-2020/</guid>
+      <description>&lt;p&gt;Hi, Welcome to my blog, I&amp;rsquo;ll be writing series of posts during my GSoC period,
+describing the work accomplished, challenges faced, lessons learnt, etc you know.. stuff??&lt;/p&gt;
+&lt;p&gt;I will be working with Dart 🥳 this summer.
+&lt;img src=&#34;https://dart.dev/assets/shared/dart-logo-for-shares.png&#34; alt=&#34;Dart&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;a-quick-word-on-gsoc&#34;&gt;A quick word on GSoC&lt;/h1&gt;
+&lt;p&gt;Google Summer of Code (GSoC) is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school.&lt;/p&gt;
+&lt;p&gt;You can learn more from their official 
+&lt;a href=&#34;https://summerofcode.withgoogle.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;how-i-got-here&#34;&gt;How I got here&lt;/h1&gt;
+&lt;p&gt;I have been working with Dart and Flutter(Dart is the language used in it) from about 2018.
+So when Dart was announced in GSoC this year I was really excited and thought about applying.&lt;/p&gt;
+&lt;p&gt;There were a lot of interesting projects, but I decided to focus on writing a single
+proposal (keeping my focus solely on one project). The proposal was on generation of Dart FFI bindings. This involved working with LibClang and Dart.&lt;/p&gt;
+&lt;p&gt;Project Link - &lt;a href=&#34;https://github.com/mannprerak2/dart_ffi_bindings_generator&#34;&gt;https://github.com/mannprerak2/dart_ffi_bindings_generator&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
