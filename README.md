@@ -15,8 +15,15 @@ cd project
 git submodule update --init --recursive
 ```
 
+### Running locally
+```bash
+cd project
+hugo server
+```
+
 ### Deploying (on user gh-pages, master branch) -
 ```bash
+# Hugo must be installed and on Path
 ./deploy.sh
 git add .
 git commit -m "built"
@@ -30,8 +37,13 @@ git push
 
 - Navigation Menu - [./project/config/_default/menus.toml](./project/config/_default/menus.toml)
 
+### Change overview
+See [./project/content/home](./project/content/home) folder.
 ### Turn on/off widgets
 Set `active=false/true` in widgets (in project/content/home folder)
 
 ### Adding Posts to blog
 Just add a folder with `index.md` and `featured.png` to [./project/content/post](./project/content/post)
+
+### Adding Project
+Just add a folder with `index.md` and `featured.png` to [./project/content/project](./project/content/project)

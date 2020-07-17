@@ -27,8 +27,7 @@
   
     
   
-  <meta name="description" content="Hi, Welcome to my blog, I&rsquo;ll be writing series of posts during my GSoC period, describing the work accomplished, challenges faced, lessons learnt, etc you know.. stuff??
-I will be working with Dart 🥳 this summer.">
+  <meta name="description" content="In this post, I&rsquo;ll be writing updates about my project during my GSoC period with Dart 🥳. A quick word on GSoC Google Summer of Code (GSoC) is a global program focused on bringing more student developers into open source software development.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/gsoc-2020/">
@@ -235,8 +234,7 @@ I will be working with Dart 🥳 this summer.">
   <meta property="og:site_name" content="Prerak Mann">
   <meta property="og:url" content="/post/gsoc-2020/">
   <meta property="og:title" content="Google Summer of Code 2020 with Dart | Prerak Mann">
-  <meta property="og:description" content="Hi, Welcome to my blog, I&rsquo;ll be writing series of posts during my GSoC period, describing the work accomplished, challenges faced, lessons learnt, etc you know.. stuff??
-I will be working with Dart 🥳 this summer."><meta property="og:image" content="/post/gsoc-2020/featured.png">
+  <meta property="og:description" content="In this post, I&rsquo;ll be writing updates about my project during my GSoC period with Dart 🥳. A quick word on GSoC Google Summer of Code (GSoC) is a global program focused on bringing more student developers into open source software development."><meta property="og:image" content="/post/gsoc-2020/featured.png">
   <meta property="twitter:image" content="/post/gsoc-2020/featured.png"><meta property="og:locale" content="en-us">
   
     
@@ -290,7 +288,7 @@ I will be working with Dart 🥳 this summer."><meta property="og:image" content
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Hi, Welcome to my blog, I\u0026rsquo;ll be writing series of posts during my GSoC period, describing the work accomplished, challenges faced, lessons learnt, etc you know.. stuff??\nI will be working with Dart 🥳 this summer."
+  "description": "In this post, I\u0026rsquo;ll be writing updates about my project during my GSoC period with Dart 🥳. A quick word on GSoC Google Summer of Code (GSoC) is a global program focused on bringing more student developers into open source software development."
 }
 </script>
 
@@ -617,7 +615,7 @@ I will be working with Dart 🥳 this summer."><meta property="og:image" content
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min read
+    2 min read
   </span>
   
 
@@ -660,9 +658,7 @@ I will be working with Dart 🥳 this summer."><meta property="og:image" content
   <div class="article-container">
 
     <div class="article-style">
-      <p>Hi, Welcome to my blog, I&rsquo;ll be writing series of posts during my GSoC period,
-describing the work accomplished, challenges faced, lessons learnt, etc you know.. stuff??</p>
-<p>I will be working with Dart 🥳 this summer.
+      <p>In this post, I&rsquo;ll be writing updates about my project during my GSoC period with Dart 🥳.
 <img src="https://dart.dev/assets/shared/dart-logo-for-shares.png" alt="Dart"></p>
 <h1 id="a-quick-word-on-gsoc">A quick word on GSoC</h1>
 <p>Google Summer of Code (GSoC) is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school.</p>
@@ -673,7 +669,15 @@ describing the work accomplished, challenges faced, lessons learnt, etc you know
 So when Dart was announced in GSoC this year I was really excited and thought about applying.</p>
 <p>There were a lot of interesting projects, but I decided to focus on writing a single
 proposal (keeping my focus solely on one project). The proposal was on generation of Dart FFI bindings. This involved working with LibClang and Dart.</p>
-<p>Project Link - <a href="https://github.com/mannprerak2/dart_ffi_bindings_generator">https://github.com/mannprerak2/dart_ffi_bindings_generator</a></p>
+<p>Project Link - <a href="https://github.com/dart-lang/ffigen">https://github.com/dart-lang/ffigen</a></p>
+<h1 id="about-ffigen">About FFIGEN</h1>
+<p>FFIGEN is an FFI bindings generator for dart. FFI stands for <strong>F</strong>oreign <strong>F</strong>unction <strong>I</strong>nterface. This tool parses C/C++ header files and generates bindings which could be directly used in Dart, and for that we use LibClang.</p>
+<p>
+<a href="https://clang.llvm.org/doxygen/group__CINDEX.html" target="_blank" rel="noopener">LibClang</a> is a C interface to Clang, using which we can parse C/C++ header files, it is used by many IDE&rsquo;s to provide C/C++ intellisense. We can call functions in Libclang via Dart, but first we need the dart bindings.</p>
+<p>The 
+<a href="https://github.com/dart-lang/ffigen/blob/master/example/libclang-example/generated_bindings.dart" target="_blank" rel="noopener">generated bindings</a> for libclang&rsquo;s headers files are <strong>~4.5kLOC</strong>!
+Imagine writing these by hand, and what happens when libclang changes, how hard would it be to track these changes and re-write the updates. Hopefully this explains the need for having such a tool in your inventory.</p>
+<p>That&rsquo;s pretty much the basics, if you would like to know more and/or contribute to this project head over to <a href="https://github.com/dart-lang/ffigen">https://github.com/dart-lang/ffigen</a>.</p>
 
     </div>
 

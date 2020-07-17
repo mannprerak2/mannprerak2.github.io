@@ -26,6 +26,10 @@ subtitle = "Open sourced at [Github](https://github.com/mannprerak2)"
      tag = "*"
 
    [[content.filter_button]]
+     name = "Dart"
+     tag = "Dart"
+
+   [[content.filter_button]]
      name = "Flutter"
      tag = "Flutter"
 
