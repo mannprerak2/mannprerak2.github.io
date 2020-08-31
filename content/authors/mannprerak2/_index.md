@@ -18,7 +18,7 @@ organizations:
   url: "http://dtu.ac.in/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am a pre-final year B.Tech undergrad at Delhi Technological University with a keen interest in Software Engineering and Development. I love to make side projects in my spare time.
+bio: Student | Developer
 
 # interests:
 # - Flutter
@@ -48,10 +48,10 @@ social:
   icon_pack: fab
   link: https://github.com/mannprerak2
 # Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
+# To enable, copy your resume/CV to `static/files/Resume.pdf` and uncomment the lines below.
+- icon: cv
+  icon_pack: ai
+  link: files/Resume.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config, taken from gravatar.com)
 email: ""
@@ -63,5 +63,4 @@ email: ""
 # - Visitors
 ---
 
-I am a pre-final year student at Delhi Technological University, pursuing B.Tech
-in Computer Engineering. I love to make side projects in my spare time.
+I'm a final year B.Tech CS undergrad at Delhi Technological University with a keen interest in Software Engineering and Development. I love to make side projects in my spare time.

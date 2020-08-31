@@ -21,20 +21,22 @@ date_format = "Jan 2006"
 [[experience]]
   title = "Google Summer Of Code - Student"
   company = "Dart"
-  company_url = ""
+  company_url = "https://dart.dev"
   date_start = "2020-06-01"
   date_end = ""
-  description = """Worked on tool to generate Dart FFI bindings from C header files."""
+  description = """Worked on `pacakge:ffigen`, a tool to generate Dart FFI bindings from C header files.
+  [Learn more about my work here.](https://gist.github.com/mannprerak2/e4530e6566b35cb94f8f1b340970973a)
+  """
 
 [[experience]]
   title = "Research Intern"
   company = "Samsung"
-  company_url = ""
+  company_url = "https://www.samsung.com/in/"
   location = "Virtual Internship"
   date_start = "2020-05-18"
   date_end = ""
   description = """
-  
+  Worked on a news recommendation system for Indic Languages.
   """
 
 +++
