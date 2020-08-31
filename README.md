@@ -1,49 +1,46 @@
-# mannprerak2.github.io
+<p align="center"><a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener"><img src="https://sourcethemes.com/academic/img/logo_200px.png" alt="Academic logo"></a></p>
 
-My Portfolio Website
+# Academic Kickstart: The Template for [Academic Website Builder](https://sourcethemes.com/academic/)
 
-The [Project](./project) folder contains all the revelant source code.
+[**Academic**](https://github.com/gcushen/hugo-academic) makes it easy to create a beautiful website for free using Markdown, Jupyter, or RStudio. Customize anything on your site with widgets, themes, and language packs. [Check out the latest demo](https://academic-demo.netlify.com/) of what you'll get in less than 10 minutes, or [view the showcase](https://sourcethemes.com/academic/#expo).
 
-This website is built using Hugo (Academic Theme)
+**Academic Kickstart** provides a minimal template to kickstart your new website.
 
+- 👉 [**Get Started**](#install)
+- 📚 [View the **documentation**](https://sourcethemes.com/academic/docs/)
+- 💬 [Chat with the **Academic community**](https://spectrum.chat/academic) or [**Hugo community**](https://discourse.gohugo.io)
+- 🐦 Twitter: [@source_themes](https://twitter.com/source_themes) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithAcademic](https://twitter.com/search?q=%23MadeWithAcademic&src=typd)
+- 💡 [Request a **feature** or report a **bug**](https://github.com/gcushen/hugo-academic/issues)
+- ⬆️ **Updating?** View the [Update Guide](https://sourcethemes.com/academic/docs/update/) and [Release Notes](https://sourcethemes.com/academic/updates/)
+- :heart: **Support development** of Academic:
+  - ☕️ [**Donate a coffee**](https://paypal.me/cushen)
+  - 💵 [Become a backer on **Patreon**](https://www.patreon.com/cushen)
+  - 🖼️ [Decorate your laptop or journal with an Academic **sticker**](https://www.redbubble.com/people/neutreno/works/34387919-academic)
+  - 👕 [Wear the **T-shirt**](https://academic.threadless.com/)
+  - :woman_technologist: [**Contribute**](https://sourcethemes.com/academic/docs/contribute/)
 
-## HELP (Quick tips for later) -
+[![Screenshot](https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png)](https://github.com/gcushen/hugo-academic/)
 
-### Init Repo (setup after cloning)
-```bash
-cd project
-git submodule update --init --recursive
-```
+## Install
 
-### Running locally
-```bash
-cd project
-hugo server
-```
+You can choose from one of the following four methods to install:
 
-### Deploying (on user gh-pages, master branch) -
-```bash
-# Hugo must be installed and on Path
-./deploy.sh
-git add .
-git commit -m "built"
-git push
-```
+* [**one-click install using your web browser (recommended)**](https://sourcethemes.com/academic/docs/install/#install-with-web-browser)
+* [install on your computer using **Git** with the Command Prompt/Terminal app](https://sourcethemes.com/academic/docs/install/#install-with-git)
+* [install on your computer by downloading the **ZIP files**](https://sourcethemes.com/academic/docs/install/#install-with-zip)
+* [install on your computer with **RStudio**](https://sourcethemes.com/academic/docs/install/#install-with-rstudio)
 
-### Updating Info
-- Resume - [./project/static/files/Resume.pdf](./project/static/files/Resume.pdf)
+Then [personalize your new site](https://sourcethemes.com/academic/docs/get-started/).
 
-- Avatar - [./project/content/author/mannprerak2/avatar.png](./project/content/author/mannprerak2/avatar.png)
+## Ecosystem
 
-- Navigation Menu - [./project/config/_default/menus.toml](./project/config/_default/menus.toml)
+* **[Academic Admin](https://github.com/sourcethemes/academic-admin):** An admin tool to import publications from BibTeX or import assets for an offline site
+* **[Academic Scripts](https://github.com/sourcethemes/academic-scripts):** Scripts to help migrate content to new versions of Academic
 
-### Change overview
-See [./project/content/home](./project/content/home) folder.
-### Turn on/off widgets
-Set `active=false/true` in widgets (in project/content/home folder)
+## License
 
-### Adding Posts to blog
-Just add a folder with `index.md` and `featured.png` to [./project/content/post](./project/content/post)
+Copyright 2017-present [George Cushen](https://georgecushen.com).
 
-### Adding Project
-Just add a folder with `index.md` and `featured.png` to [./project/content/project](./project/content/project)
+Released under the [MIT](https://github.com/sourcethemes/academic-kickstart/blob/master/LICENSE.md) license.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-78646709-2/academic-kickstart/readme?pixel)](https://github.com/igrigorik/ga-beacon)
