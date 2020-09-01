@@ -49,9 +49,9 @@ social:
   link: https://github.com/mannprerak2
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/Resume.pdf` and uncomment the lines below.
-- icon: cv
-  icon_pack: ai
-  link: files/Resume.pdf
+# - icon: cv
+#   icon_pack: ai
+#   link: files/Resume.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config, taken from gravatar.com)
 email: ""

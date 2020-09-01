@@ -24,7 +24,7 @@ hugo server
 Automatically deployed on master branch using github actions.
 
 ### Updating Info
-- Resume - [.static/files/Resume.pdf](./static/files/Resume.pdf)
+- Resume - [File on drive](https://drive.google.com/file/d/1edmxnXqdmr_JUAWxiZZzL3xmv004IRp2/view?usp=sharing)
 
 - Avatar - [./content/author/mannprerak2/avatar.png](./content/author/mannprerak2/avatar.png)
 
