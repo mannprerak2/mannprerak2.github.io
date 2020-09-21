@@ -1,6 +1,6 @@
 ---
 title: Eventhub 🔗
-summary: A `mobile app` to view events at my college, DTU
+summary: A `mobile app` to view events at my college, DTU. View it [online](https://mannprerak2.github.io/event_hub_flutter/).
 tags:
 - Flutter
 date: "2020-01-27T00:00:00Z"
