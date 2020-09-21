@@ -1,5 +1,5 @@
 ---
-title: Eventhub
+title: Eventhub 🔗
 summary: A `mobile app` to view events at my college, DTU
 tags:
 - Flutter

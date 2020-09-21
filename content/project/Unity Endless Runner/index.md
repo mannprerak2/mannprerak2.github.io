@@ -1,5 +1,5 @@
 ---
-title: Endless Runner - Perspective Run Unity3D
+title: Endless Runner - Perspective Run Unity3D 🔗
 summary: Old Endless Runner, Made with Unity3D
 tags:
 - Other

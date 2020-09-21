@@ -1,5 +1,5 @@
 ---
-title: Flutter Project Portfolio
+title: Flutter Project Portfolio 🔗
 summary: My Project Portfolio, made with Flutter Web
 tags:
 - Flutter

@@ -1,5 +1,5 @@
 ---
-title: Anroid Nearby Connections for Flutter
+title: Anroid Nearby Connections for Flutter 🔗
 summary: Flutter `Plugin` for the android [Nearby Connections](https://developers.google.com/nearby/connections/overview) API.
 tags:
 - Flutter

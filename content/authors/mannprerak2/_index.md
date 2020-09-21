@@ -27,10 +27,10 @@ bio: Student | Developer
 education:
   courses:
   - course: B.Tech - Computer Engineering
-    institution: Delhi Technological University
+    institution: 'Delhi Technological University ■ CGPA: 8.58'
     year: 2021
   - course: High School
-    institution: New Era Public School
+    institution: 'New Era Public School ■ XII: 92% ■ X: 9.2/10'
     year: 2016
 
 # Social/Academic Networking
@@ -63,4 +63,4 @@ email: ""
 # - Visitors
 ---
 
-I'm a final year B.Tech CS undergrad at Delhi Technological University with a keen interest in Software Engineering and Development. I love to make side projects in my spare time.
+I'm a final year **B.Tech Computer Engineering** undergrad at **Delhi Technological University**(formerly DCE) with a keen interest in **Software Development and Engineering**. I like to explore new technologies and make side projects in my spare time.

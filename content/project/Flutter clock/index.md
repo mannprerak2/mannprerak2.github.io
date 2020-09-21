@@ -1,6 +1,6 @@
 ---
-title: Flutter Clock
-summary: A Clock UI for `smart clocks`
+title: Flutter Clock 🔗
+summary: A Clock UI for `smart clocks`.
 tags:
 - Flutter
 date: "2020-02-27T00:00:00Z"

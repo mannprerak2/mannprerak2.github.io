@@ -1,5 +1,5 @@
 ---
-title: Jigsaw Camera Puzzle
+title: Jigsaw Camera Puzzle 🔗
 summary: A fun `jigsaw puzzle with live camera` image, made with Flutter
 tags:
 - Flutter

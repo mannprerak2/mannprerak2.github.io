@@ -1,5 +1,5 @@
 ---
-title: Music Video Recorder
+title: Music Video Recorder 🔗
 summary: A `Bash script` to Record Audio on PC, Video on Phone simultaneously and merge them automatically with sync
 tags:
 - Other

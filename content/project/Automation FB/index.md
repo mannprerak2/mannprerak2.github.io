@@ -1,5 +1,5 @@
 ---
-title: Automation FB
+title: Automation FB 🔗
 summary: Automating facebook `using selenium in python` (Like a page and their posts and sending messages to friends)
 tags:
 - Python

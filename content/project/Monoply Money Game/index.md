@@ -1,5 +1,5 @@
 ---
-title: Monoply Money Game
+title: Monoply Money Game 🔗
 summary: A `flutter app` to handle money transactions in monoply with multiple connected devices on LAN
 tags:
 - Flutter

@@ -1,5 +1,5 @@
 ---
-title: 'ffigen: Dart FFI bindings generator'
+title: 'ffigen: Dart FFI bindings generator 🔗'
 summary: Experimental dart bindings generator, part of [GSoC '20](https://summerofcode.withgoogle.com/projects/#5669653688352768).
 tags:
 - Dart

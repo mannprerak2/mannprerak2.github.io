@@ -13,10 +13,10 @@
   url = "#experience"
   weight = 30
 
-[[main]]
-  name = "Blog"
-  url = "#posts"
-  weight = 31
+#[[main]]
+#  name = "Blog"
+#  url = "#posts"
+#  weight = 31
 
 [[main]]
   name = "Projects"
@@ -26,6 +26,6 @@
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
  [[main]]
-    name = "Resume"
+    name = '<strong style="color: #dd0000">Resume</strong>'
     url = "https://drive.google.com/file/d/1edmxnXqdmr_JUAWxiZZzL3xmv004IRp2/view?usp=sharing"
     weight = 70

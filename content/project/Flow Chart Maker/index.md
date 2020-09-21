@@ -1,5 +1,5 @@
 ---
-title: Flow Chart Maker
+title: Flow Chart Maker 🔗
 summary: Make flowcharts easily in browser and download svg directly
 tags:
 - Web
