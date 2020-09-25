@@ -1,6 +1,6 @@
 ---
 title: Anroid Nearby Connections for Flutter 🔗
-summary: Flutter `Plugin` for the android [Nearby Connections](https://developers.google.com/nearby/connections/overview) API.
+summary: Transfer bytes and files between multiple connected devices using peer to peer networking. Flutter `Plugin` based on the android [Nearby Connections](https://developers.google.com/nearby/connections/overview) API.
 tags:
 - Flutter
 date: "2020-04-27T00:00:00Z"

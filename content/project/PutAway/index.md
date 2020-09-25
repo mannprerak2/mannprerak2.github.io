@@ -1,6 +1,6 @@
 ---
 title: PutAway Tab management 🔗
-summary: A tab management `extension for Chrome` and Chromium-based browsers Made with SvelteJS. Available on [Chrome Webstore](https://chrome.google.com/webstore/detail/putaway-tab-management/fkfhaaminmefilpjiapgokmlbjfokafa).
+summary: A tab management `extension for Chrome` and Chromium-based browsers Made with SvelteJS. Available on [Chrome Webstore](https://chrome.google.com/webstore/detail/putaway-tab-management/fkfhaaminmefilpjiapgokmlbjfokafa). Save tabs and sessions as bookmarks all from the NewTab page.
 tags:
 - Web
 date: "2020-04-27T00:00:00Z"
