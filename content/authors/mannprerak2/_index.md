@@ -43,7 +43,7 @@ social:
   link: 'mailto:mannprerak2@gmail.com'  # For a direct email link, use "mailto:test@example.org".
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/in/prerak-mann-4b0011165/
+  link: https://www.linkedin.com/in/mannprerak2/
 - icon: github
   icon_pack: fab
   link: https://github.com/mannprerak2
