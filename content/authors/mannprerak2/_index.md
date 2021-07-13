@@ -27,7 +27,7 @@ bio: Student | Developer
 education:
   courses:
   - course: B.Tech - Computer Engineering
-    institution: 'Delhi Technological University ■ CGPA: 8.69'
+    institution: 'Delhi Technological University ■ CGPA: 8.73'
     year: 2021
   - course: High School
     institution: 'New Era Public School ■ XII: 92% ■ X: 9.2/10'
