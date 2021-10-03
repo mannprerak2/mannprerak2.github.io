@@ -12,12 +12,15 @@ Simply make the changes in source branch and github actions will deploy website 
 
 ### Init Repo (setup after cloning)
 ```bash
+# Install Hugo
+brew install hugo
+# Setup git submodules
 git submodule update --init --recursive
 ```
 
 ### Running locally
 ```bash
-hugo server
+hugo server # Or run ./view.sh
 ```
 
 ### Deploying (on user gh-pages, master branch) -
@@ -40,3 +43,6 @@ Just add a folder with `index.md` and `featured.png` to [./content/post](./conte
 
 ### Adding Project
 Just add a folder with `index.md` and `featured.png` to [./content/project](./content/project)
+
+### Additional
+- Change settings and themes - [./config/_default/params.toml](./config/_default/params.toml)
