@@ -19,6 +19,16 @@ date_format = "Jan 2006"
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 
 [[experience]]
+  title = "Google Summer Of Code - Mentor"
+  company = "Dart"
+  company_url = "https://dart.dev"
+  date_start = "2021-06-01"
+  date_end = "2021-08-21"
+  description = """Mentored a flutter project on a HTTP Client library (Cronet)
+  [Project](https://summerofcode.withgoogle.com/projects/#4757095741652992)
+  """
+
+[[experience]]
   title = "Google Summer Of Code - Student"
   company = "Dart"
   company_url = "https://dart.dev"
