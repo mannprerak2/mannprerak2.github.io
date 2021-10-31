@@ -10,15 +10,15 @@ authors:
 superuser: true
 
 # Role/position
-role: Student | Developer
+role: Software Engineer | Backend
 
 # Organizations/Affiliations
 organizations:
-- name: Delhi Technological University
-  url: "http://dtu.ac.in/"
+- name: Pickrr
+  url: "https://pickrr.com"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Student | Developer
+bio: Software Engineer
 
 # interests:
 # - Flutter
@@ -27,9 +27,9 @@ bio: Student | Developer
 education:
   courses:
   - course: B.Tech - Computer Engineering
-    institution: 'Delhi Technological University ■ CGPA: 8.73'
+    institution: 'Delhi Technological University ■ CGPA: 8.73/10'
     year: 2021
-  - course: High School
+  - course: Secondary School
     institution: 'New Era Public School ■ XII: 92% ■ X: 9.2/10'
     year: 2016
 
@@ -63,4 +63,11 @@ email: ""
 # - Visitors
 ---
 
-I'm a final year **B.Tech Computer Engineering** undergrad at **Delhi Technological University**(formerly DCE) with a keen interest in **Software Development and Engineering**. I like to explore new technologies and make side projects in my spare time.
+I'm a `software engineer` from New Delhi, India. Currently working as a
+`backend` engineer at [Pickrr](https://pickrr.com). Here are a few things
+about me -
+
+- Experience with Django(Python) for backend development.
+- Part of [Google summer of code '21](https://gist.github.com/mannprerak2/e4530e6566b35cb94f8f1b340970973a) with [Dart](https://dart.dev).
+- Open-source enthusiast.
+- Love to explore new tech and make side [projects](#projects).
