@@ -40,8 +40,10 @@
               {{ (time .date_start).Format ($page.Params.date_format | default "January 2006") }} –
               {{ if .date_end}}
                 {{ (time .date_end).Format ($page.Params.date_format | default "January 2006") }}
+                ({{ math.Ceil (div ((time .date_end).Sub (time .date_start)).Hours 720)}} mo)
               {{else}}
                 {{ i18n "present" | default "Present" }}
+                ({{ math.Ceil (div ((time now).Sub (time .date_start)).Hours 720)}} mo)
               {{end}}
               {{with .location}}
                 <span class="middot-divider"></span>

@@ -24,7 +24,7 @@ date_format = "Jan 2006"
   company_url = "https://pickrr.com/about/"
   date_start = "2021-06-07"
   date_end = ""
-  description = """Backend engineer. Tech stack - `Python`, `Django`, `MySQL`
+  description = """Backend engineer. Tech stack - `Python`, `Django`, `MySQL`, `Java`, `Spring`.
   """
 
 #[[experience]]
