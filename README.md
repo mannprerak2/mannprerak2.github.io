@@ -8,8 +8,8 @@ Originally migrated from Hugo (Academic Theme) to Astro, it features a single so
 
 ## 🚀 Key Features
 
-* **Single Source of Truth**: All profile info, education, work experience, technical arsenal, and achievements are configured in a single file ([src/data/cv.yaml](file:///Users/prerakmann/repos/mannprerak2.github.io/src/data/cv.yaml)).
-* **Astro Content Collections**: Projects ([src/content/projects/](file:///Users/prerakmann/repos/mannprerak2.github.io/src/content/projects)) and blog posts ([src/content/posts/](file:///Users/prerakmann/repos/mannprerak2.github.io/src/content/posts)) are managed as schema-validated Markdown files.
+* **Single Source of Truth**: All profile info, education, work experience, technical arsenal, and achievements are configured in a single file ([src/data/cv.yaml](/src/data/cv.yaml)).
+* **Astro Content Collections**: Projects ([src/content/projects/](/src/content/projects)) and blog posts ([src/content/posts/](/src/content/posts)) are managed as schema-validated Markdown files.
 * **Unified Timeline Component**: Automatically groups experience, education, and achievements by organization, calculates durations in years and months dynamically, and displays split colors for dates vs. duration badges.
 * **Homepage Projects Integration**: Interactive project list integrated directly on the home page (`#projects` anchor) with real-time text search and category filter tabs (**Featured**, **All**, **Android**, **Web**, **Other**), displaying **Featured** projects by default.
 * **Modern Styling & Dark Mode**: Built with Tailwind CSS, utilizing a premium dark-mode-first aesthetic, clean typography, custom scrollbars, and smooth interactive transitions.
@@ -48,7 +48,7 @@ npm run build
 
 ### Updating CV / Profile Details
 Simply edit the core data file:
-* File location: [src/data/cv.yaml](file:///Users/prerakmann/repos/mannprerak2.github.io/src/data/cv.yaml)
+* File location: [src/data/cv.yaml](/src/data/cv.yaml)
 * Modify technical skills, education timelines, work descriptions, and links directly. Markdown formatting is supported inside description fields.
 
 ### Adding or Modifying Projects

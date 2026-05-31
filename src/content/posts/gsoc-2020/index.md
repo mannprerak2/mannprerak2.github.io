@@ -1,11 +1,7 @@
 ---
-
 title: Google Summer of Code 2020 with Dart
 date: 2020-05-12
-math: false
-diagram: false
-image:
-  placement: 3
+featured: "./featured.png"
 ---
 
 In this post, I'll be writing updates about my project during my GSoC period with Dart :partying_face:.
