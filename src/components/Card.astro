@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import { ExternalLink, Calendar } from '@lucide/astro';
+import { parseMarkdown } from '../utils/markdown';
+import { getTagStyles } from '../utils/colors';
+
+interface Props {
+  title: string;
+  description: string;
+  tags?: string[];
+  link?: string;
+  featured?: any; // Astro ImageMetadata
+  date?: Date | string;
+  badge?: string;
+}
+
+const { title, description, tags = [], link, featured, date, badge } = Astro.props;
+
+const formattedDate = date 
+  ? new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) 
+  : null;
+---
+
+<div class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/50 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+  <div>
+    <!-- Cover Image -->
+    {featured && (
+      <div class="aspect-video w-full overflow-hidden border-b border-zinc-200/50 dark:border-zinc-800/50">
+        <Image 
+          src={featured} 
+          alt={title} 
+          width={640}
+          height={360}
+          class="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out" 
+        />
+      </div>
+    )}
+
+    <!-- Content Area -->
+    <div class="p-6">
+      <div class="flex items-center justify-between gap-2 mb-3">
+        {badge && (
+          <span class="inline-flex items-center rounded-full bg-brand-50 dark:bg-brand-950/40 px-2.5 py-0.5 text-xs font-semibold text-brand-700 dark:text-brand-300 border border-brand-100 dark:border-brand-900/40">
+            {badge}
+          </span>
+        )}
+        
+        {formattedDate && (
+          <span class="inline-flex items-center gap-1 text-xs text-zinc-400 dark:text-zinc-500 font-medium">
+            <Calendar class="w-3.5 h-3.5" />
+            {formattedDate}
+          </span>
+        )}
+      </div>
+
+      <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-zinc-50 mb-2 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+        {link ? (
+          <a href={link} target="_blank" rel="noopener noreferrer" class="focus:outline-none flex items-center gap-1.5">
+            {title}
+            <ExternalLink class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity inline" />
+          </a>
+        ) : (
+          title
+        )}
+      </h3>
+
+      <div class="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-3 leading-relaxed prose prose-xs dark:prose-invert max-w-none">
+        <Fragment set:html={parseMarkdown(description)} />
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Tags -->
+  {tags.length > 0 && (
+    <div class="px-6 pb-6 pt-0 flex flex-wrap gap-1.5">
+      {tags.map((tag) => (
+        <span class={`inline-flex items-center rounded px-2.5 py-0.5 text-xs font-semibold border transition-colors ${getTagStyles(tag)}`}>
+          #{tag}
+        </span>
+      ))}
+    </div>
+  )}
+</div>
