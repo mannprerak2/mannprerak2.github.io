@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import { Calendar, ArrowLeft } from '@lucide/astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} | Prerak Mann`} description={post.data.summary}>
+  <article class="max-w-3xl mx-auto space-y-8 py-4 sm:py-8">
+    <!-- Back Button -->
+    <a href="/blog" class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-500 hover:text-brand-500 transition-colors">
+      <ArrowLeft class="w-4 h-4" />
+      Back to Blog
+    </a>
+
+    <!-- Header info -->
+    <header class="space-y-4 border-b border-zinc-200/50 dark:border-zinc-800/50 pb-6">
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-zinc-900 dark:text-zinc-50">
+        {post.data.title}
+      </h1>
+      <div class="flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500 font-medium">
+        <Calendar class="w-3.5 h-3.5" />
+        {new Date(post.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </div>
+    </header>
+
+    <!-- Cover Image -->
+    {post.data.featured && (
+      <div class="aspect-video sm:aspect-[21/9] w-full overflow-hidden rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 shadow-sm">
+        <Image 
+          src={post.data.featured} 
+          alt={post.data.title} 
+          width={1200}
+          height={514}
+          class="h-full w-full object-cover object-center" 
+        />
+      </div>
+    )}
+
+    <!-- Rendered Markdown Body -->
+    <div class="prose prose-zinc dark:prose-invert max-w-none text-sm sm:text-base leading-relaxed prose-headings:font-display prose-headings:font-bold prose-a:text-brand-600 dark:prose-a:text-brand-400 prose-img:rounded-xl">
+      <Content />
+    </div>
+  </article>
+</Layout>

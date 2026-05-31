@@ -1,0 +1,220 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CV Data Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Your full name"
+    },
+    "title": {
+      "type": "string",
+      "description": "The browser tab title for the site"
+    },
+    "role": {
+      "type": "string",
+      "description": "Your professional title or headline"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Contact email address"
+    },
+    "github": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to your GitHub profile"
+    },
+    "linkedin": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to your LinkedIn profile"
+    },
+    "avatar": {
+      "type": "string",
+      "description": "Path to your profile photo (e.g. /avatar.png)"
+    },
+    "googleAnalyticsId": {
+      "type": "string",
+      "description": "Your Google Analytics Measurement ID (G-XXXXXXXXXX)"
+    },
+    "resumeUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to download or view your resume document"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Markdown summary of yourself"
+    },
+    "education": {
+      "type": "array",
+      "description": "List of academic institutions and courses",
+      "items": {
+        "type": "object",
+        "required": ["course", "institution", "year"],
+        "properties": {
+          "course": {
+            "type": "string",
+            "description": "Degree or certification title"
+          },
+          "institution": {
+            "type": "string",
+            "description": "School, college, or university name"
+          },
+          "details": {
+            "type": "string",
+            "description": "Additional details like GPA, honors, etc."
+          },
+          "year": {
+            "type": "string",
+            "description": "Academic years (e.g. '2017 - 2021')"
+          },
+          "hideDuration": {
+            "type": "boolean",
+            "description": "Set to true to hide the duration badge on the timeline"
+          }
+        }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "description": "List of work experience",
+      "items": {
+        "type": "object",
+        "required": ["company", "roles"],
+        "properties": {
+          "company": {
+            "type": "string",
+            "description": "Name of the employing organization"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Organization website link"
+          },
+          "location": {
+            "type": "string",
+            "description": "City, country, or Remote"
+          },
+          "dateStart": {
+            "type": "string",
+            "description": "Starting date (e.g. YYYY-MM-DD)"
+          },
+          "dateEnd": {
+            "type": "string",
+            "description": "Ending date (e.g. YYYY-MM-DD). Leave empty or omit for Present."
+          },
+          "hideDuration": {
+            "type": "boolean",
+            "description": "Set to true to hide the company-level duration badge on the timeline"
+          },
+          "roles": {
+            "type": "array",
+            "description": "Roles held at this organization",
+            "items": {
+              "type": "object",
+              "required": ["title"],
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "Job title/role name"
+                },
+                "dateStart": {
+                  "type": "string",
+                  "description": "Starting date for this role"
+                },
+                "dateEnd": {
+                  "type": "string",
+                  "description": "Ending date for this role"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description of responsibilities and achievements (supports Markdown)"
+                },
+                "hideDuration": {
+                  "type": "boolean",
+                  "description": "Set to true to hide the role-level duration badge on the timeline"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "achievements": {
+      "type": "array",
+      "description": "List of certificates or key accolades",
+      "items": {
+        "type": "object",
+        "required": ["title", "organization", "date"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the achievement"
+          },
+          "organization": {
+            "type": "string",
+            "description": "Awarding body or company"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Verification or publication link"
+          },
+          "certificateUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Direct link to credential document or certificate"
+          },
+          "date": {
+            "type": "string",
+            "description": "Date awarded (e.g. YYYY-MM-DD)"
+          },
+          "description": {
+            "type": "string",
+            "description": "Brief description of the award"
+          },
+          "hideDuration": {
+            "type": "boolean",
+            "description": "Set to true to hide the duration badge on the timeline"
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "description": "Categorized skill lists",
+      "items": {
+        "type": "object",
+        "required": ["category", "items"],
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Category heading (e.g. Languages)"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of skills in this category"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "title",
+    "role",
+    "email",
+    "avatar",
+    "resumeUrl",
+    "bio",
+    "education",
+    "experience",
+    "achievements",
+    "skills"
+  ]
+}

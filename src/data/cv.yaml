@@ -1,0 +1,73 @@
+# Personal CV Data (Single Source of Truth)
+# yaml-language-server: $schema=./cv-schema.json
+
+name: "Prerak Mann"
+title: "Prerak Mann | Software Engineer"
+role: "Software Engineer | Backend"
+email: "mannprerak2@gmail.com"
+github: "https://github.com/mannprerak2"
+linkedin: "https://www.linkedin.com/in/mannprerak2/"
+avatar: "/avatar.png"
+googleAnalyticsId: "G-QNFW2PZ0Q9"
+resumeUrl: "https://drive.google.com/file/d/1edmxnXqdmr_JUAWxiZZzL3xmv004IRp2/view?usp=sharing"
+
+bio: |
+  I'm a **software engineer** from New Delhi, India. Currently working as a **backend** engineer at Shiprocket. Here are a few things about me -
+
+  - Experience with Django(Python) for backend development.
+  - Part of [Google Summer of Code '21](https://gist.github.com/mannprerak2/e4530e6566b35cb94f8f1b340970973a) with [Dart](https://dart.dev).
+  - Open-source enthusiast.
+  - Love to explore new tech and make side projects.
+
+education:
+  - course: "B.Tech - Computer Engineering"
+    institution: "Delhi Technological University"
+    details: "CGPA: 8.73/10"
+    year: "2017 - 2021"
+
+experience:
+  - company: "Shiprocket"
+    url: "https://www.shiprocket.in"
+    location: "New Delhi, India"
+    dateStart: "2021-06-07"
+    dateEnd: "" # Empty means "Present"
+    roles:
+      - title: "Software Development Engineer - 1"
+        # dateStart: "2021-06-07"
+        # dateEnd: "2023-06-07"
+        # hideDuration: true
+        description: |
+          Backend engineer. Tech stack - `Python`, `Django`, `MySQL`, `Java`, `Spring`.
+
+  - company: "Google Summer of Code (GSoC) - Dart"
+    url: "https://dart.dev"
+    location: "Remote"
+    roles:
+      - title: "Student"
+        dateStart: "2020-06-01"
+        dateEnd: "2020-09-01"
+        description: |
+          Worked on `package:ffigen`, a tool to generate Dart FFI bindings from C header files.
+          [Learn more about my work here.](https://gist.github.com/mannprerak2/e4530e6566b35cb94f8f1b340970973a)
+
+  - company: "Samsung - Bangalore"
+    url: "https://www.samsung.com/in/"
+    location: "Bangalore, India"
+    dateStart: "2020-05-18"
+    dateEnd: "2020-07-13"
+    roles:
+      - title: "Research Intern"
+        description: |
+          Worked on a news recommendation system for Indic Languages.
+
+achievements:
+  - title: "Google Open Source Peer Bonus"
+    organization: "Google Open Source Peer Bonus"
+    url: "https://opensource.googleblog.com/2021/09/announcing-latest-open-source-peer-bonus-winners.html#:~:text=in%20User%2Dspace)-,Prerak%20Mann,-Dart%20%2D%20package%3Affigen"
+    certificateUrl: "https://drive.google.com/file/d/1kKZs44d89WbBMGg4iY3dg4Qrk74XXm5_/view"
+    date: "2021-09-15"
+    description: "Received a `$250` bonus for my open source contributions to [dart-lang/ffigen](https://github.com/dart-lang/ffigen)."
+
+skills:
+    - category: "Languages, Frameworks & Tools"
+      items: ["Python", "Dart", "Java", "Django", "Spring", "MySQL", "C/C++"]

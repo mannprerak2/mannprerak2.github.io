@@ -1,0 +1,81 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-zinc-900 transition-colors duration-200 antialiased font-sans selection:bg-brand-500 selection:text-white;
+  }
+  
+  .dark body {
+    @apply bg-zinc-950 text-zinc-50;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-300 rounded-full hover:bg-zinc-400 transition-colors;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/85 backdrop-blur-md border border-zinc-200/80;
+  }
+  .dark .glass {
+    @apply bg-zinc-900/85 backdrop-blur-md border border-zinc-800/80;
+  }
+}
+
+/* Custom styles for print output */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Hide screen-only interactive elements */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Expand print columns to full width */
+  .print-full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Prevent page breaks inside cards or lists */
+  .print-avoid-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Remove default margins for PDF generation */
+  @page {
+    margin: 1.5cm;
+  }
+}
+
+/* Disable Tailwind Typography default backticks around code elements */
+.prose code::before {
+  content: "" !important;
+}
+.prose code::after {
+  content: "" !important;
+}

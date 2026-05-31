@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { Calendar, ArrowRight } from '@lucide/astro';
+
+const posts = await getCollection('posts');
+const sortedPosts = posts
+  .filter(p => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Blog | Prerak Mann" description="Read articles and coding tutorials written by Prerak Mann.">
+  <div class="space-y-12 max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="text-center max-w-xl mx-auto space-y-4">
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl tracking-tight text-zinc-900 dark:text-zinc-50">
+        My <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-500 to-indigo-500">Blog</span>
+      </h1>
+      <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed">
+        Writing about software design, backend engineering, open source contributions, and tutorials.
+      </p>
+    </div>
+
+    <!-- Posts list -->
+    {sortedPosts.length > 0 ? (
+      <div class="space-y-8">
+        {sortedPosts.map((post) => (
+          <article class="group relative flex flex-col items-start p-6 rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 bg-white dark:bg-zinc-900/40 hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-all duration-200">
+            <div class="flex items-center gap-2 mb-3 text-xs text-zinc-400 dark:text-zinc-500 font-medium">
+              <Calendar class="w-3.5 h-3.5" />
+              {new Date(post.data.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </div>
+            
+            <h2 class="font-display font-bold text-xl text-zinc-900 dark:text-zinc-50 mb-3 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors">
+              <a href={`/blog/${post.slug}`} class="focus:outline-none">
+                {post.data.title}
+              </a>
+            </h2>
+
+            {post.data.summary && (
+              <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 line-clamp-3">
+                {post.data.summary}
+              </p>
+            )}
+
+            <div class="flex items-center gap-1 text-xs font-bold text-brand-600 dark:text-brand-400 group-hover:text-brand-700 dark:group-hover:text-brand-300">
+              Read Article
+              <ArrowRight class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </div>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <div class="text-center py-16 text-zinc-400 dark:text-zinc-500">
+        <p>No blog posts published yet. Stay tuned!</p>
+      </div>
+    )}
+  </div>
+</Layout>
