@@ -131,15 +131,18 @@ const parsedBio = parseMarkdown(cv.bio);
           <Briefcase class="w-6 h-6 text-brand-500" />
           Experience
         </h2>
-        <Timeline items={cv.experience.map((job: any) => ({
-          title: job.title,
-          subtitle: job.company,
-          url: job.url,
-          location: job.location,
-          dateStart: job.dateStart,
-          dateEnd: job.dateEnd,
-          description: job.description
-        }))} />
+        <Timeline 
+          items={cv.experience.map((job: any) => ({
+            title: job.title,
+            subtitle: job.company,
+            url: job.url,
+            location: job.location,
+            dateStart: job.dateStart,
+            dateEnd: job.dateEnd,
+            description: job.description
+          }))} 
+          showDurationAtCompany={true}
+        />
       </div>
     </div>
   </section>

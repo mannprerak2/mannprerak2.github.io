@@ -25,6 +25,15 @@ education:
     year: "2017 - 2021"
 
 experience:
+  - title: "Software Development Engineer - 2"
+    company: "Shiprocket"
+    url: "https://www.shiprocket.in"
+    location: "New Delhi, India"
+    dateStart: "2021-06-07"
+    dateEnd: "" # Empty means "Present"
+    description: |
+      Backend engineer. Tech stack - `Python`, `Django`, `MySQL`, `Java`, `Spring`.
+
   - title: "Software Development Engineer - 1"
     company: "Shiprocket"
     url: "https://www.shiprocket.in"
