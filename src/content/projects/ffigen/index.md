@@ -11,5 +11,6 @@ tags:
 date: "2020-07-01T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
+featuredProject: true
 external_link: https://github.com/dart-lang/ffigen
 ---

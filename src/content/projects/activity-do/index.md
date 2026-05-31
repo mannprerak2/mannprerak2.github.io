@@ -12,6 +12,7 @@ tags:
 date: "2019-04-27T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
+featuredProject: true
 external_link: https://github.com/mannprerak2/ActivityDo
 ---
 

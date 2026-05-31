@@ -20,6 +20,7 @@ const projectsCollection = defineCollection({
     date: z.coerce.date(),
     external_link: z.string().url().optional(),
     featured: image().optional(),
+    featuredProject: z.boolean().optional(),
   }),
 });
 
