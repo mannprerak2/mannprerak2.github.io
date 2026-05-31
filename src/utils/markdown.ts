@@ -4,8 +4,11 @@
 export function parseMarkdown(text: string): string {
   if (!text) return '';
   
+  // Replace escaped backticks with regular backticks
+  let html = text.replace(/\\`/g, '`');
+  
   // Format bold text
-  let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   
   // Format inline code blocks
   html = html.replace(/`(.*?)`/g, '<code class="bg-zinc-100 dark:bg-zinc-800/80 px-1 py-0.5 rounded text-xs font-mono text-brand-600 dark:text-brand-400">$1</code>');
