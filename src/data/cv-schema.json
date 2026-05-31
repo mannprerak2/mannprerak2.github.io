@@ -30,10 +30,6 @@
       "format": "uri",
       "description": "URL to your LinkedIn profile"
     },
-    "avatar": {
-      "type": "string",
-      "description": "Path to your profile photo (e.g. /avatar.png)"
-    },
     "googleAnalyticsId": {
       "type": "string",
       "description": "Your Google Analytics Measurement ID (G-XXXXXXXXXX)"
@@ -209,7 +205,6 @@
     "title",
     "role",
     "email",
-    "avatar",
     "resumeUrl",
     "bio",
     "education",

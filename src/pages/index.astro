@@ -7,6 +7,7 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
 import { Mail, FileText, ExternalLink, Award, Sparkles, Code, Briefcase, GraduationCap, Search } from '@lucide/astro';
+import avatar from '../assets/avatar.png';
 
 const cv = yaml.load(fs.readFileSync(path.resolve('src/data/cv.yaml'), 'utf8')) as any;
 const projects = await getCollection('projects');
@@ -64,7 +65,7 @@ const parsedBio = parseMarkdown(cv.bio);
     <div class="w-44 h-44 sm:w-56 sm:h-56 relative">
       <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-zinc-200 dark:border-zinc-800 shadow-md">
         <img 
-          src={cv.avatar} 
+          src={avatar.src} 
           alt={cv.name} 
           class="w-full h-full object-cover"
         />
