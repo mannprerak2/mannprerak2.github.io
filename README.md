@@ -2,7 +2,7 @@
 
 A modern, fast, responsive developer portfolio and CV website built with **Astro** and **Tailwind CSS**. 
 
-Originally migrated from Hugo (Academic Theme) to Astro, it features a single source of truth for resume listings, markdown-driven content collections for blog posts/projects, a unified timeline viewer, and dynamic client-side filtering.
+It features a single source of truth for resume listings, markdown-driven content collections for blog posts/projects, a unified timeline viewer, and dynamic client-side filtering.
 
 ---
 
@@ -11,7 +11,7 @@ Originally migrated from Hugo (Academic Theme) to Astro, it features a single so
 * **Single Source of Truth**: All profile info, education, work experience, technical arsenal, and achievements are configured in a single file ([src/data/cv.yaml](/src/data/cv.yaml)).
 * **Astro Content Collections**: Projects ([src/content/projects/](/src/content/projects)) and blog posts ([src/content/posts/](/src/content/posts)) are managed as schema-validated Markdown files.
 * **Unified Timeline Component**: Automatically groups experience, education, and achievements by organization, calculates durations in years and months dynamically, and displays split colors for dates vs. duration badges.
-* **Homepage Projects Integration**: Interactive project list integrated directly on the home page (`#projects` anchor) with real-time text search and category filter tabs (**Featured**, **All**, **Android**, **Web**, **Other**), displaying **Featured** projects by default.
+* **Homepage Projects Integration**: Interactive project list integrated directly on the home page (`#projects` anchor) with real-time text search and category filter tabs (**Featured**, **All**, **mobile**, **Web**, **Other**), displaying **Featured** projects by default.
 * **Modern Styling & Dark Mode**: Built with Tailwind CSS, utilizing a premium dark-mode-first aesthetic, clean typography, custom scrollbars, and smooth interactive transitions.
 * **Image Optimization**: Astro's optimized image components are used for automatic format conversion (WebP), responsive sizing, caching, and full support for animated GIFs.
 * **GitHub Actions Deployment**: Automatically builds and deploys static assets to your GitHub Pages branch.
@@ -61,7 +61,7 @@ Projects are located under the `src/content/projects/` directory.
    title: "My Awesome App"
    summary: "A short, descriptive summary of the project."
    tags:
-     - Android
+     - mobile
      - Web
    date: "2026-05-31"
    featured: "./featured.png"       # Cover image (Optional)

@@ -2,17 +2,17 @@
 featured: "./featured.jpg"
 title: Activity Do 🔗
 summary: |
-    An `android app` to Plan and Organise Notes as Activities, Available on [PlayStore](https://play.google.com/store/apps/details?id=com.pkmnapps.activitydo).
+    An `mobile app` to Plan and Organise Notes as Activities, Available on [PlayStore](https://play.google.com/store/apps/details?id=com.pkmnapps.activitydo).
 
     You can add images, create text notes and checklists, and organize them
     on different pages. Every activity can have a separate color theme and there
     is compelte emoji support. The data is stored using SQLite for fast access and edit.
 tags:
-- Android
-date: "2019-04-27T00:00:00Z"
+- mobile
+date: "2019-04-27"
 
 # Optional external URL for project (replaces project detail page).
-featuredProject: true
+featuredProject: false
 external_link: https://github.com/mannprerak2/ActivityDo
 ---
 

@@ -217,22 +217,16 @@ const parsedBio = parseMarkdown(cv.bio);
           All
         </button>
         <button 
-          data-filter="android"
+          data-filter="mobile"
           class="filter-chip px-4 py-1.5 rounded-full text-xs font-semibold bg-zinc-100 text-zinc-600 dark:bg-zinc-800/60 dark:text-zinc-300 border border-zinc-200/50 dark:border-zinc-700/50 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-150"
         >
-          Android
+          Mobile
         </button>
         <button 
           data-filter="web"
           class="filter-chip px-4 py-1.5 rounded-full text-xs font-semibold bg-zinc-100 text-zinc-600 dark:bg-zinc-800/60 dark:text-zinc-300 border border-zinc-200/50 dark:border-zinc-700/50 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-150"
         >
           Web
-        </button>
-        <button 
-          data-filter="other"
-          class="filter-chip px-4 py-1.5 rounded-full text-xs font-semibold bg-zinc-100 text-zinc-600 dark:bg-zinc-800/60 dark:text-zinc-300 border border-zinc-200/50 dark:border-zinc-700/50 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-zinc-100 transition-all duration-150"
-        >
-          Other
         </button>
       </div>
 
@@ -249,8 +243,8 @@ const parsedBio = parseMarkdown(cv.bio);
           // Classify category
           const cleanTags = (project.data.tags || []).map(t => t.toLowerCase());
           let category = 'other';
-          if (cleanTags.includes('android')) {
-            category = 'android';
+          if (cleanTags.includes('mobile')) {
+            category = 'mobile';
           } else if (cleanTags.includes('web') || cleanTags.includes('svelte') || cleanTags.includes('html') || cleanTags.includes('js') || cleanTags.includes('ts')) {
             category = 'web';
           }
