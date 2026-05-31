@@ -1,4 +1,5 @@
 # Personal CV Data (Single Source of Truth)
+# yaml-language-server: $schema=./cv-schema.json
 
 name: "Prerak Mann"
 title: "Prerak Mann | Software Engineer"
@@ -25,42 +26,39 @@ education:
     year: "2017 - 2021"
 
 experience:
-  - title: "Software Development Engineer - 2"
-    company: "Shiprocket"
+  - company: "Shiprocket"
     url: "https://www.shiprocket.in"
     location: "New Delhi, India"
     dateStart: "2021-06-07"
     dateEnd: "" # Empty means "Present"
-    description: |
-      Backend engineer. Tech stack - `Python`, `Django`, `MySQL`, `Java`, `Spring`.
+    roles:
+      - title: "Software Development Engineer - 1"
+        # dateStart: "2021-06-07"
+        # dateEnd: "2023-06-07"
+        # hideDuration: true
+        description: |
+          Backend engineer. Tech stack - `Python`, `Django`, `MySQL`, `Java`, `Spring`.
 
-  - title: "Software Development Engineer - 1"
-    company: "Shiprocket"
-    url: "https://www.shiprocket.in"
-    location: "New Delhi, India"
-    dateStart: "2021-06-07"
-    dateEnd: "" # Empty means "Present"
-    description: |
-      Backend engineer. Tech stack - `Python`, `Django`, `MySQL`, `Java`, `Spring`.
-
-  - title: "Student"
-    company: "Google Summer of Code (GSoC) - Dart"
+  - company: "Google Summer of Code (GSoC) - Dart"
     url: "https://dart.dev"
     location: "Remote"
-    dateStart: "2020-06-01"
-    dateEnd: "2020-09-01"
-    description: |
-      Worked on `package:ffigen`, a tool to generate Dart FFI bindings from C header files.
-      [Learn more about my work here.](https://gist.github.com/mannprerak2/e4530e6566b35cb94f8f1b340970973a)
+    roles:
+      - title: "Student"
+        dateStart: "2020-06-01"
+        dateEnd: "2020-09-01"
+        description: |
+          Worked on `package:ffigen`, a tool to generate Dart FFI bindings from C header files.
+          [Learn more about my work here.](https://gist.github.com/mannprerak2/e4530e6566b35cb94f8f1b340970973a)
 
-  - title: "Research Intern"
-    company: "Samsung - Bangalore"
+  - company: "Samsung - Bangalore"
     url: "https://www.samsung.com/in/"
     location: "Bangalore, India"
     dateStart: "2020-05-18"
     dateEnd: "2020-07-13"
-    description: |
-      Worked on a news recommendation system for Indic Languages.
+    roles:
+      - title: "Research Intern"
+        description: |
+          Worked on a news recommendation system for Indic Languages.
 
 achievements:
   - title: "Google Open Source Peer Bonus"
@@ -71,7 +69,5 @@ achievements:
     description: "Received a `$250` bonus for my open source contributions to [dart-lang/ffigen](https://github.com/dart-lang/ffigen)."
 
 skills:
-  - category: "Languages & Frameworks"
-    items: ["Python", "Dart", "Java", "Django", "Spring", "MySQL", "C/C++"]
-  - category: "Tools & Technologies"
-    items: ["Git", "Docker", "REST APIs", "Hugo", "Astro", "Linux"]
+    - category: "Languages, Frameworks & Tools"
+      items: ["Python", "Dart", "Java", "Django", "Spring", "MySQL", "C/C++"]

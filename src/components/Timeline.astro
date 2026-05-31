@@ -2,9 +2,17 @@
 import { ExternalLink, MapPin } from '@lucide/astro';
 import { parseMarkdown } from '../utils/markdown';
 
+interface TimelineChildItem {
+  title: string;
+  dateStart?: string;
+  dateEnd?: string;
+  description?: string;
+  hideDuration?: boolean;
+}
+
 interface TimelineItem {
   title: string;
-  subtitle: string; // company, institution, or organization
+  subtitle?: string; // company, institution, or organization
   url?: string;
   location?: string;
   dateStart?: string;
@@ -13,40 +21,16 @@ interface TimelineItem {
   details?: string; // GPA or certificate links
   description?: string;
   singleDate?: boolean;
+  roles?: TimelineChildItem[];
+  hideDuration?: boolean;
 }
 
 interface Props {
   items: TimelineItem[];
-  showDurationAtCompany?: boolean;
+  showDuration?: boolean;
 }
 
-const { items, showDurationAtCompany = false } = Astro.props;
-
-// Group items by subtitle (company/institution/organization) to show roles/courses grouped underneath
-const groupedItems = items.reduce((acc, item) => {
-  const key = item.subtitle;
-  if (!acc[key]) {
-    acc[key] = {
-      subtitle: item.subtitle,
-      url: item.url,
-      location: item.location,
-      roles: []
-    };
-  }
-  acc[key].roles.push({
-    title: item.title,
-    url: item.url,
-    dateStart: item.dateStart,
-    dateEnd: item.dateEnd,
-    year: item.year,
-    details: item.details,
-    description: item.description,
-    singleDate: item.singleDate
-  });
-  return acc;
-}, {} as Record<string, { subtitle: string; url?: string; location?: string; roles: any[] }>);
-
-const groupedList = Object.values(groupedItems);
+const { items, showDuration = true } = Astro.props;
 
 // Formatting helper for date start/end
 function formatTimelineDate(startStr?: string, endStr?: string, year?: string, singleDate?: boolean) {
@@ -85,124 +69,165 @@ function getDurationString(startStr: string, endStr?: string): string {
   
   return parts.join(' ');
 }
-
-// Helper to calculate total aggregated duration spent at the organization
-function getGroupDuration(roles: any[]): string {
-  let minStart: Date | null = null;
-  let maxEnd: Date | null = null;
-  let hasPresent = false;
-
-  roles.forEach(role => {
-    if (role.dateStart) {
-      const start = new Date(role.dateStart);
-      if (!minStart || start < minStart) {
-        minStart = start;
-      }
-    }
-    if (role.dateStart) {
-      if (!role.dateEnd) {
-        hasPresent = true;
-      } else {
-        const end = new Date(role.dateEnd);
-        if (!maxEnd || end > maxEnd) {
-          maxEnd = end;
-        }
-      }
-    }
-  });
-
-  if (!minStart) return '';
-
-  const startStr = minStart.toISOString();
-  const endStr = hasPresent ? undefined : maxEnd?.toISOString();
-  return getDurationString(startStr, endStr);
-}
-
 ---
 
 <div class="relative border-l border-zinc-200 dark:border-zinc-800 ml-3 md:ml-4 pl-6 md:pl-8 space-y-10">
-  {groupedList.map((group) => {
+  {items.map((item) => {
+    const hasRoles = item.roles && item.roles.length > 0;
+    
     return (
       <div class="relative group">
-        <!-- Icon indicator for Organization -->
+        <!-- Main timeline dot -->
         <span class="absolute -left-[31px] md:-left-[39px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-colors duration-200 group-hover:border-brand-500 dark:group-hover:border-brand-400">
-          <span class="h-1.5 w-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700/80 transition-colors duration-200 group-hover:bg-brand-50"></span>
+          <span class="h-1.5 w-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700/80 transition-colors duration-200 group-hover:bg-brand-500"></span>
         </span>
 
-        <!-- Organization Header -->
-        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 mb-4">
-          <h3 class="font-display font-extrabold text-lg sm:text-xl text-zinc-900 dark:text-zinc-50 transition-colors duration-200">
-            {group.url ? (
-              <a href={group.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-brand-500 dark:hover:text-brand-400">
-                {group.subtitle}
-                <ExternalLink class="w-4 h-4 inline opacity-65" />
-              </a>
-            ) : (
-              group.subtitle
-            )}
-          </h3>
-          {showDurationAtCompany && (
-            <span class="inline-flex items-center rounded-full bg-brand-50 text-brand-700 dark:bg-brand-950/40 dark:text-brand-300 px-2.5 py-0.5 text-[10px] font-semibold border border-brand-100 dark:border-brand-900/30 whitespace-nowrap">
-              {getGroupDuration(group.roles)}
-            </span>
-          )}
-          {group.location && (
-            <span class="inline-flex items-center gap-1 text-xs text-zinc-400 dark:text-zinc-500">
-              <MapPin class="w-3.5 h-3.5 opacity-65" />
-              {group.location}
-            </span>
-          )}
-        </div>
-
-        <!-- Sub-items List (Roles / Courses / achievements) -->
-        <div class="space-y-6 ml-0.5 pl-4 border-l border-zinc-200/60 dark:border-zinc-800/40">
-          {group.roles.map((role) => (
-            <div class="relative group/role">
-              <!-- Role indicator bullet -->
-              <span class="absolute -left-[20.5px] top-2 h-1.5 w-1.5 rounded-full bg-zinc-200 dark:bg-zinc-800 transition-colors group-hover/role:bg-brand-500"></span>
-
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                <h4 class="font-bold text-sm text-zinc-850 dark:text-zinc-200">
-                  {role.title}
-                </h4>
+        {hasRoles ? (
+          <div>
+            <!-- Organization Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 class="font-display font-extrabold text-lg sm:text-xl text-zinc-900 dark:text-zinc-50 transition-colors duration-200">
+                {item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-brand-500 dark:hover:text-brand-400">
+                    {item.title}
+                    <ExternalLink class="w-4 h-4 inline opacity-65" />
+                  </a>
+                ) : (
+                  item.title
+                )}
+              </h3>
+              
+              {item.dateStart && (
                 <div class="flex items-center gap-1.5 text-xs whitespace-nowrap">
                   <span class="font-medium text-zinc-500 dark:text-zinc-400">
-                    {formatTimelineDate(role.dateStart, role.dateEnd, role.year, role.singleDate)}
+                    {formatTimelineDate(item.dateStart, item.dateEnd, item.year, item.singleDate)}
                   </span>
-                  {!showDurationAtCompany && !role.singleDate && !role.year && role.dateStart && (
+                  {showDuration && !item.hideDuration && !item.singleDate && !item.year && (
                     <>
                       <span class="text-zinc-300 dark:text-zinc-700 font-light">•</span>
                       <span class="inline-flex items-center rounded-full bg-brand-50 text-brand-700 dark:bg-brand-950/40 dark:text-brand-300 px-2.5 py-0.5 text-[10px] font-semibold border border-brand-100 dark:border-brand-900/30">
-                        {getDurationString(role.dateStart, role.dateEnd)}
+                        {getDurationString(item.dateStart, item.dateEnd)}
                       </span>
                     </>
                   )}
                 </div>
-              </div>
-
-              <!-- Details (GPA or Certificate Link) -->
-              {role.details && (
-                <div class="text-xs font-medium mb-2">
-                  {role.details.startsWith('http') ? (
-                    <a href={role.details} target="_blank" rel="noopener noreferrer" class="text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
-                      View Certificate
-                      <ExternalLink class="w-3.5 h-3.5" />
-                    </a>
-                  ) : (
-                    <span class="text-zinc-500 dark:text-zinc-400">{role.details}</span>
-                  )}
-                </div>
-              )}
-
-              <!-- Description -->
-              {role.description && (
-                <div class="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 max-w-3xl prose prose-zinc dark:prose-invert prose-xs">
-                  <Fragment set:html={parseMarkdown(role.description)} />
-                </div>
               )}
             </div>
-          ))}
-        </div>
+
+            <!-- Organization Metadata -->
+            {item.location && (
+              <div class="flex items-center gap-1 text-xs text-zinc-400 dark:text-zinc-500 mb-4">
+                <MapPin class="w-3.5 h-3.5 opacity-65" />
+                {item.location}
+              </div>
+            )}
+
+            <!-- Roles nested list -->
+            <div class="space-y-6 ml-0.5 pl-4 border-l border-zinc-200/60 dark:border-zinc-800/40">
+              {item.roles!.map((role) => (
+                <div class="relative group/role">
+                  <!-- Role indicator bullet -->
+                  <span class="absolute -left-[20.5px] top-2 h-1.5 w-1.5 rounded-full bg-zinc-200 dark:bg-zinc-800 transition-colors group-hover/role:bg-brand-500"></span>
+
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                    <h4 class="font-bold text-sm sm:text-base text-zinc-850 dark:text-zinc-200">
+                      {role.title}
+                    </h4>
+                    
+                    {role.dateStart && (
+                      <div class="flex items-center gap-1.5 text-xs whitespace-nowrap">
+                        <span class="font-medium text-zinc-500 dark:text-zinc-400">
+                          {formatTimelineDate(role.dateStart, role.dateEnd)}
+                        </span>
+                        {showDuration && !role.hideDuration && (
+                          <>
+                            <span class="text-zinc-300 dark:text-zinc-700 font-light">•</span>
+                            <span class="inline-flex items-center rounded-full bg-brand-50 text-brand-700 dark:bg-brand-950/40 dark:text-brand-300 px-2 py-0.5 text-[10px] font-semibold border border-brand-100 dark:border-brand-900/30">
+                              {getDurationString(role.dateStart, role.dateEnd)}
+                            </span>
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  {role.description && (
+                    <div class="text-sm leading-relaxed text-zinc-650 dark:text-zinc-350 max-w-3xl prose prose-zinc dark:prose-invert prose-xs">
+                      <Fragment set:html={parseMarkdown(role.description)} />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div>
+            <!-- Header: Title & Date -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1.5">
+              <h3 class="font-display font-bold text-base sm:text-lg text-zinc-900 dark:text-zinc-50 transition-colors duration-200">
+                {item.title}
+              </h3>
+              
+              <div class="flex items-center gap-1.5 text-xs whitespace-nowrap">
+                <span class="font-medium text-zinc-500 dark:text-zinc-400">
+                  {formatTimelineDate(item.dateStart, item.dateEnd, item.year, item.singleDate)}
+                </span>
+                {showDuration && !item.hideDuration && !item.singleDate && !item.year && item.dateStart && (
+                  <>
+                    <span class="text-zinc-300 dark:text-zinc-700 font-light">•</span>
+                    <span class="inline-flex items-center rounded-full bg-brand-50 text-brand-700 dark:bg-brand-950/40 dark:text-brand-300 px-2.5 py-0.5 text-[10px] font-semibold border border-brand-100 dark:border-brand-900/30">
+                      {getDurationString(item.dateStart, item.dateEnd)}
+                    </span>
+                  </>
+                )}
+              </div>
+            </div>
+
+            <!-- Subtitle: Company/Institution & Location -->
+            {item.subtitle && (
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3 text-sm">
+                <span class="font-semibold text-zinc-700 dark:text-zinc-300">
+                  {item.url ? (
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" class="hover:text-brand-500 dark:hover:text-brand-400 inline-flex items-center gap-1">
+                      {item.subtitle}
+                      <ExternalLink class="w-3.5 h-3.5 opacity-65" />
+                    </a>
+                  ) : (
+                    item.subtitle
+                  )}
+                </span>
+
+                {item.location && (
+                  <span class="inline-flex items-center gap-1 text-xs text-zinc-400 dark:text-zinc-500">
+                    <MapPin class="w-3.5 h-3.5 opacity-65" />
+                    {item.location}
+                  </span>
+                )}
+              </div>
+            )}
+
+            <!-- Details (GPA or Certificate Link) -->
+            {item.details && (
+              <div class="text-xs font-medium mb-2">
+                {item.details.startsWith('http') ? (
+                  <a href={item.details} target="_blank" rel="noopener noreferrer" class="text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+                    View Certificate
+                    <ExternalLink class="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <span class="text-zinc-500 dark:text-zinc-400">{item.details}</span>
+                )}
+              </div>
+            )}
+
+            <!-- Description -->
+            {item.description && (
+              <div class="text-sm leading-relaxed text-zinc-650 dark:text-zinc-350 max-w-3xl prose prose-zinc dark:prose-invert prose-xs">
+                <Fragment set:html={parseMarkdown(item.description)} />
+              </div>
+            )}
+          </div>
+        )}
       </div>
     );
   })}
