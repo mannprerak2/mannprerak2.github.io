@@ -165,7 +165,7 @@ const parsedBio = parseMarkdown(cv.bio);
 
   <!-- Projects Section -->
   <section id="projects" class="py-12 sm:py-16 scroll-mt-20">
-    <div class="space-y-8">
+    <div class="max-w-3xl space-y-8">
       <!-- Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
@@ -228,7 +228,7 @@ const parsedBio = parseMarkdown(cv.bio);
 
       <!-- Projects Grid -->
       <div 
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" 
+        class="space-y-6" 
         id="homepage-projects-grid"
       >
         {sortedProjects.map((project) => {

@@ -71,3 +71,11 @@
     margin: 1.5cm;
   }
 }
+
+/* Disable Tailwind Typography default backticks around code elements */
+.prose code::before {
+  content: "" !important;
+}
+.prose code::after {
+  content: "" !important;
+}
