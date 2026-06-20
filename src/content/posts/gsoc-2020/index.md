@@ -5,7 +5,7 @@ featured: "./featured.png"
 ---
 
 In this post, I'll be writing updates about my project during my GSoC period with Dart :partying_face:.
-![Dart](https://dart.dev/assets/shared/dart-logo-for-shares.png)
+![Dart](https://dart.dev/assets/img/logo/logo-white-text.svg)
 
 # A quick word on GSoC
 Google Summer of Code (GSoC) is a global program focused on bringing more student developers into open source software development. Students work with an open source organization on a 3 month programming project during their break from school.
