@@ -14,7 +14,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.6",
-    "js-yaml": "^4.2.0",
+    "js-yaml": "^4.3.0",
     "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
